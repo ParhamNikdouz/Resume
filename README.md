@@ -1,4 +1,5 @@
-[![Build Status](https://travis-ci.org/numb95/Resume.svg?branch=master)](https://travis-ci.org/numb95/Resume)
+[![Build Status](https://travis-ci.com/ParhamNikdouz/Resume.svg?branch=master)](https://travis-ci.org/ParhamNikdouz/Resume)
+
 # Resume
 My own Resume based on Latex
 
