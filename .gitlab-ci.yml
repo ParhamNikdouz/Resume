@@ -20,6 +20,7 @@ deploy:
     dependencies:
         - build
     script:
+        - ls && ls /home/parham
         - cp ./_build/ParhamNikdouzCV.pdf /home/parham
     tags:
         - shell_executor
