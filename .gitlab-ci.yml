@@ -1,14 +1,25 @@
 stages:
+    - build
     - deploy
 
-deploy:
-    stage: deploy
+build:
+    stage: build
     image: ubuntu:trusty
     before_script:
         - sudo apt-get -qq update && sudo apt-get install -y texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended texlive-full
     script:
         - mkdir _build
         - pdflatex -output-directory _build ./tex/ParhamNikdouzCV.tex
+    artifacts:
+        paths:
+            - ./tex/ParhamNikdouzCV.tex
+        expire_in: 30 min
+
+deploy:
+    stage: deploy
+    dependencies:
+        - build
+    script:
         - cp ./tex/ParhamNikdouzCV.tex .
     tags:
         - shell_executor
