@@ -12,7 +12,7 @@ build:
         - pdflatex -output-directory _build ./tex/ParhamNikdouzCV.tex
     artifacts:
         paths:
-            - ./tex/ParhamNikdouzCV.tex
+            - ./_build/ParhamNikdouzCV.pdf
         expire_in: 30 min
 
 deploy:
@@ -20,7 +20,7 @@ deploy:
     dependencies:
         - build
     script:
-        - cp ./tex/ParhamNikdouzCV.tex .
+        - cp ./_build/ParhamNikdouzCV.pdf /home/parham
     tags:
         - shell_executor
     only:
