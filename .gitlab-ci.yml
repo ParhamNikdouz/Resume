@@ -20,8 +20,9 @@ deploy:
     dependencies:
         - build
     script:
-        - ls && ls /home/parham
-        - cp ./_build/ParhamNikdouzCV.pdf /home/parham
+        - cp ./_build/ParhamNikdouzCV.pdf .
+        - cp ./_build/ParhamNikdouzCV.pdf /root
+        - echo "Uploaded to server!"
     tags:
         - shell_executor
     only:
