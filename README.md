@@ -1,4 +1,3 @@
-[![Build Status](https://travis-ci.com/ParhamNikdouz/Resume.svg?branch=master)](https://travis-ci.com/ParhamNikdouz/Resume)
 
 # Resume
 My own Resume based on Latex
