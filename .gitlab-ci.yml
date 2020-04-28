@@ -6,10 +6,13 @@ build:
     stage: build
     image: ubuntu:focal
     before_script:
-        - apt update && apt install -y texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended texlive-full
+        - apt-get -qq update && apt-get install -y texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended texlive-full
     script:
         - mkdir _build
         - pdflatex -output-directory _build ./tex/ParhamNikdouzCV.tex
+        - git config --local user.name "Parham Nikdouz"
+        - git config --local user.email "pnikdouz@gmail.com"
+        - git tag "$(date +'%Y_%m_%d_%H_%M_%S')-$(git log --format=%h -1)"
     artifacts:
         paths:
             - ./_build/ParhamNikdouzCV.pdf
