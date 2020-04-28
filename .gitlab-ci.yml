@@ -6,11 +6,12 @@ build:
     stage: build
     image: ubuntu:focal
     before_script:
+        - apt-get -qq update
         - export DEBIAN_FRONTEND=noninteractive
         - ln -fs /usr/share/zoneinfo/Asia/Tehran /etc/localtime
         - apt-get install -y tzdata
         - dpkg-reconfigure --frontend noninteractive tzdata
-        - apt-get -qq update && apt-get install -y texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended texlive-full
+        - apt-get install -y texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended texlive-full
     script:
         - mkdir _build
         - pdflatex -output-directory _build ./tex/ParhamNikdouzCV.tex
