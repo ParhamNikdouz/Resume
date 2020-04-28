@@ -6,7 +6,7 @@ build:
     stage: build
     image: ubuntu:focal
     before_script:
-        - sudo apt -qq update && sudo apt install -y texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended texlive-full
+        - apt update && apt install -y texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended texlive-full
     script:
         - mkdir _build
         - pdflatex -output-directory _build ./tex/ParhamNikdouzCV.tex
