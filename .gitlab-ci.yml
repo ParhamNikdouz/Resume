@@ -21,6 +21,7 @@ build:
         expire_in: 30 min
     only:
         - master
+        - minimal
 
 # deploy:
 #     stage: deploy
